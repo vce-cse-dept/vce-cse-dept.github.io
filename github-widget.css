@@ -1,0 +1,125 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 40px;
+  font-family: "Open Sans", "sans-serif";
+  background-color: #9dacb5;  /* For browsers that do not support gradients */
+  background-image: linear-gradient(
+    180deg,
+    rgba(145, 171, 186, 0.9),
+    rgba(140, 171, 192, 0.8),
+    rgba(172, 163, 156, 1),
+    rgba(187, 140, 110, 1)
+  );
+  color: #444;
+}
+
+h1,
+p {
+  margin: 0 0 1em 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+/* no grid support? */
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+}
+
+.gw-repo-outer {
+  /* needed for the flex layout*/
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 1 1 200px;
+}
+
+.gw-repo-outer:nth-child(even) {
+  background-color: #cfdfef;
+  color: #000;
+}
+
+.header,
+footer {
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 0 1 100%;
+  grid-column: 1 / -1;
+}
+
+.wrapper > * {
+  background-color: #43d9b8;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  margin-bottom: 10px;
+}
+
+/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
+
+@supports (display: grid) {
+  .wrapper > * {
+    margin: 2;
+  }
+}
+.gw-repo {
+  padding: 0.5em 0;
+  margin: 0 1.5em 1em 0;
+}
+.gw-repo:nth-child(2n) {
+  margin: 0 0 1em 1.5em;
+}
+.gw-title {
+  margin-bottom: 0.3em;
+}
+.gw-name {
+  font-weight: bold;
+}
+.gw-stats {
+  display: inline-block;
+  margin: 0;
+  float: right;
+}
+.gw-watchers,
+.gw-forks {
+  display: inline-block;
+  height: 21px;
+  padding: 0 5px 0 23px;
+  line-height: 21px;
+  background: transparent url("repostat.png") no-repeat 0 0;
+}
+.gw-watchers {
+  background-position: 5px -2px;
+}
+.gw-forks {
+  background-position: 5px -52px;
+}
+.gw-lang {
+  font-size: 0.8em;
+  color: #777;
+}
+.gw-clearer {
+  clear: left;
+}
