@@ -1,4 +1,4 @@
-# teamyayin.github.io
+# vce-cse-dept.github.io
 
 Just a webpage of all our public github repositories.
 
